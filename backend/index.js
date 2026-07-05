@@ -1,11 +1,17 @@
-
+//index.js
+import "dotenv/config";
 import express from "express";
 import db from "./db/dbConfig.js";
 import mainRouter from "./src/api/main.route.js";
 import cors from "cors";
 import { errorHandler } from "./src/middleware/error-handler.js";
 
-
+console.log("=== ENV CHECK ===");
+console.log("DB_HOST:", process.env.DB_HOST);
+console.log("DB_USER:", process.env.DB_USER);
+console.log("DB_PASSWORD exists:", !!process.env.DB_PASSWORD);
+console.log("DB_DATABASE:", process.env.DB_DATABASE);
+console.log("==================");
 const app = express();
 
 app.use(cors({
