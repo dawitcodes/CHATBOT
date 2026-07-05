@@ -1,0 +1,76 @@
+/* ChatMessage.module.css */
+
+/* Main container for the row */
+.message {
+  display: flex;
+  padding: 12px 24px;
+  max-width: 900px;
+  margin: 0 auto;
+  width: 100%;
+  gap: 12px;
+  align-items: flex-start;
+}
+
+/* --- User Styles (Right Side) --- */
+.user {
+  flex-direction: row-reverse; /* Pushes everything to the right */
+}
+
+.user .avatar {
+  background-color: #3b82f6; /* Blue background for user icon */
+}
+
+.user .content {
+  background-color: #2f2f2f; /* Dark grey bubble for user messages */
+  padding: 10px 16px;
+  border-radius: 18px; /* Rounded corners for the bubble */
+  color: #ececf1;
+  max-width: 70%;
+  text-align: left; /* Keeps text readable inside the bubble */
+}
+
+/* --- Assistant Styles (Left Side) --- */
+.assistant {
+  flex-direction: row; /* Default alignment */
+}
+
+.assistant .avatar {
+  background-color: #10a37f; /* Green background for bot icon */
+}
+
+.assistant .content {
+  background-color: transparent; /* No bubble for AI as seen in target image */
+  padding: 10px 0;
+  color: #ececf1;
+  flex: 1;
+}
+
+/* --- Shared Avatar Styles --- */
+.avatar {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%; /* Circular icons */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  margin-top: 4px;
+}
+
+/* --- Markdown & Text Styles --- */
+.content {
+  font-size: 15px;
+  line-height: 1.6;
+  word-wrap: break-word;
+}
+
+.markdownBody {
+  line-height: 1.6;
+  font-family: inherit;
+}
+
+/* Optional: Fixes spacing for lists in Markdown */
+.markdownBody ul, .markdownBody ol {
+  padding-left: 20px;
+  margin: 10px 0;
+}

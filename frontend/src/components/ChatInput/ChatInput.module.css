@@ -1,0 +1,75 @@
+.container {
+    padding: 24px;
+    max-width: 800px;
+    margin: 0 auto;
+    width: 100%;
+  }
+  
+  .form {
+    position: relative;
+    display: flex;
+    align-items: center;
+    background-color: var(--bg-input);
+    border-radius: 24px;
+    padding: 8px 16px;
+    gap: 12px;
+  }
+  
+  /* Gray control icons (Plus icon on the left) */
+  .iconBtn {
+    background: none;
+    border: none;
+    color: var(--text-secondary);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    padding: 0;
+  }
+  
+  .input {
+    flex: 1;
+    background: transparent;
+    border: none;
+    outline: none;
+    color: var(--text-primary);
+    font-size: 16px;
+    padding: 8px 0;
+  }
+  
+  .input::placeholder {
+    color: var(--text-secondary);
+    opacity: 0.6;
+  }
+  
+  /* STATE A: The quiet mic style seen in image_34ac10.png */
+  .micBtnBare {
+    background: none;
+    border: none;
+    color: var(--text-secondary); /* Keeps it same color as the plus icon */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    padding: 4px;
+  }
+  
+  /* STATE B: The white circular arrow badge when typing */
+  .submitBtn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #ffffff; /* Creates the white circular container */
+    color: var(--bg-main);     /* Dark gray/black arrow fill color */
+    border: none;
+    border-radius: 50%;        /* Perfect round shape */
+    width: 32px;
+    height: 32px;
+    cursor: pointer;
+    transition: transform 0.2s ease, opacity 0.2s ease;
+  }
+  
+  .submitBtn:hover {
+    opacity: 0.9;
+    transform: scale(1.04);
+  }
