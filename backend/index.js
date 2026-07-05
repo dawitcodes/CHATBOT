@@ -28,14 +28,14 @@ async function startServer() {
     const connection = await db.getConnection();
     connection.release();
     console.log("Db connected");
+const PORT = process.env.PORT || 3000;
 
+app.listen(PORT, (err) => {
+  if (err) throw err;
+
+  console.log(`Server is running on port ${PORT}`);
+});
     // Starting the Express server
-    app.listen(18545, (err) => {
-      if (err) {
-        throw err;
-      }
-      console.log(`Server is running on port http://localhost:${PORT}`);
-    });
   } catch (error) {
     // Catching any errors during connection or startup
     console.error("Error starting server:", error.message);
