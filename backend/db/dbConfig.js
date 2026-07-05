@@ -10,8 +10,9 @@
 
 // export default db;
 
-import "dotenv/config";
-import mysql from "mysql2/promise";
+if (process.env.NODE_ENV !== "production") {
+  import("dotenv/config");
+}import mysql from "mysql2/promise";
 console.log("DB_HOST:", process.env.DB_HOST);
 console.log("DB_PORT:", process.env.DB_PORT);
 console.log("DB_USER:", process.env.DB_USER);
