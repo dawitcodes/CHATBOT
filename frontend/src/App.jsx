@@ -4,6 +4,7 @@ import Sidebar from "./components/Sidebar/Sidebar.jsx";
 import ChatHeader from "./components/ChatHeader/ChatHeader.jsx";
 import MessageList from "./components/MessageList/MessageList.jsx";
 import ChatInput from "./components/ChatInput/ChatInput.jsx";
+const BASE_URL = import.meta.env.VITE_API_URL;
 
 function App() {
   const [conversations, setConversations] = useState([]);
@@ -13,7 +14,7 @@ function App() {
   async function fetchConversations() {
     try {
       const { data } = await axios.get(
-        "http://localhost:3888/api/chat/conversation",
+        `${BASE_URL}/api/chat/conversation`,
       );
 
       setConversations(data.data || []);
@@ -41,7 +42,7 @@ function App() {
 
       // 2. Send to backend
       const { data } = await axios.post(
-        "http://localhost:3888/api/chat/conversation",
+        `${BASE_URL}/api/chat/conversation`,
         {
           question: cleanQuestion,
         },
@@ -120,6 +121,15 @@ function App() {
 }
 
 export default App;
+
+
+
+
+
+
+
+
+
 // import Sidebar from "./components/Sidebar/Sidebar.jsx";
 // import ChatHeader from "./components/ChatHeader/ChatHeader.jsx";
 // import MessageList from "./components/MessageList/MessageList.jsx";
