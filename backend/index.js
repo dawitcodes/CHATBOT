@@ -1,6 +1,7 @@
 
 
-import "dotenv/config";
+import dotenv from "dotenv";
+dotenv.config();
 import express from "express";
 import db from "./db/dbConfig.js";
 import mainRouter from "./src/api/main.route.js";
@@ -12,9 +13,9 @@ import { errorHandler } from "./src/middleware/error-handler.js";
 const app = express();
 
 app.use(cors({
-  origin: "http://localhost:5173"
+  origin: "*"  
 }))
-
+// http://localhost:5173
 app.use(express.json());
 
 // app.use(express.urlencoded({ extended: true }));
@@ -22,8 +23,6 @@ app.use("/api",mainRouter);
 app.use(errorHandler);
 
 async function startServer() {
-  const PORT = 3888;
-
   try {
     // Establishing database connection
     const connection = await db.getConnection();
@@ -31,7 +30,7 @@ async function startServer() {
     console.log("Db connected");
 
     // Starting the Express server
-    app.listen(PORT, (err) => {
+    app.listen(18545, (err) => {
       if (err) {
         throw err;
       }
